@@ -8,6 +8,14 @@ entity teste_clock is
         reset : in  std_logic;
         count : out std_logic_vector(7 downto 0)
     );
+    -- TAGS DE VERIFICAÇÃO (Requer suporte a SystemVerilog Assertions):
+    
+    -- Se o reset estava ativo no ciclo passado, count atual deve ser 0
+    -- @c2vhdl:ASSERT $past(reset) ? (count == 0) : 1;
+    
+    -- Se reset NÃO estava ativo, count deve ser anterior + 1
+    -- @c2vhdl:ASSERT !$past(reset) ? (count == $past(count) + 8'd1) : 1;
+    
 end teste_clock;
 
 architecture behavioral of teste_clock is

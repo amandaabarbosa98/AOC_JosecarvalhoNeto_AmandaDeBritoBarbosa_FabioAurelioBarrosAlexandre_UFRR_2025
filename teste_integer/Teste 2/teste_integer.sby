@@ -1,0 +1,16 @@
+[options]
+mode prove
+
+[engines]
+smtbmc
+
+[script]
+plugin -i ghdl
+read_verilog -sv verif_teste_integer.sv
+ghdl --std=08 teste_integer_com_as.vhd -e teste_integer
+prep -top verify_teste_integer
+write_verilog -noattr traducao_teste_integer.v
+
+[files]
+verif_teste_integer.sv
+teste_integer_com_as.vhd

@@ -1,0 +1,17 @@
+[options]
+mode bmc
+depth 20
+
+[engines]
+smtbmc
+
+[script]
+plugin -i ghdl
+read_verilog -sv verif_teste_clock.sv
+ghdl --std=08 teste_clock_com_as.vhd -e teste_clock
+prep -top verify_teste_clock
+write_verilog -noattr traducao_teste_clock.v
+
+[files]
+verif_teste_clock.sv
+teste_clock_com_as.vhd

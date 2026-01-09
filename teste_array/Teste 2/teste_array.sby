@@ -1,0 +1,16 @@
+[options]
+mode prove
+
+[engines]
+smtbmc
+
+[script]
+plugin -i ghdl
+read_verilog -sv verif_teste_array.sv
+ghdl --std=08 teste_array_com_as.vhd -e teste_array
+prep -top verify_teste_array
+write_verilog -noattr traducao_teste_array.v
+
+[files]
+verif_teste_array.sv
+teste_array_com_as.vhd
