@@ -1,0 +1,16 @@
+[options]
+mode prove
+
+[engines]
+smtbmc
+
+[script]
+plugin -i ghdl
+read_verilog -sv verif_teste_downto.sv
+ghdl --std=08 teste_downto_com_as.vhd -e teste_downto
+prep -top verify_teste_downto
+write_verilog -noattr traducao_teste_downto.v
+
+[files]
+verif_teste_downto.sv
+teste_downto_com_as.vhd
