@@ -69,6 +69,7 @@ task04/results/ast/*.ast.json
 Abrir o dashboard
 python3 task04/serve_dashboard.py
 
+<img width="1907" height="377" alt="{4DCC15D8-23DC-4707-9740-10DBBDAA3B15}" src="https://github.com/user-attachments/assets/f4d4cd47-4707-4901-9cfb-2bd32147c23e" />
 
 Abra no navegador:
 
