@@ -49,20 +49,6 @@ task04/unify_ast.py + task04/ast_frontend/ — geração/unificação do AST com
 
 Como executar
 
-Na raiz do repositório:
-
-python3 task04/run_task04.py --in task04/inputs_vhdl --out task04 --run-yosys --gen-ast
-
-Resultados esperados:
-
-task04/specs/*.json
-
-task04/results/summary.json
-
-task04/results/summary.csv
-
-task04/results/ast/*.ast.json
-
 Abrir o dashboard
 python3 task04/serve_dashboard.py
 
