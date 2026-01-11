@@ -1,12 +1,10 @@
 # AOC_JosecarvalhoNeto_AmandaDeBritoBarbosa_FabioAurelioBarrosAlexandre_UFRR_2025
 
-Visão geral
+<img width="1259" height="301" alt="image" src="https://github.com/user-attachments/assets/bd4662de-d763-4cb1-aa29-88445bd04fb8" />
 
 Este repositório contém a implementação da TASK 04, com um pipeline automatizado para processar designs em VHDL, extrair propriedades de verificação e gerar artefatos organizados para análise. O foco é tornar o fluxo reproduzível, rastreável e fácil de validar por meio de um resumo consolidado e de um dashboard.
 
-O principal diferencial entregue é a Parte 05 (mais avançado): um Front-end unificador com AST comum, que gera uma representação intermediária padronizada para cada design (Common AST), unificando interface, propriedades e metadados de origem em um único formato (*.ast.json).
-
-O que foi feito (resumo do processo)
+O que foi feito 
 
 Criação dos casos de teste (Objetivo 1)
 Foram criados quatro designs de teste cobrindo os constructs exigidos:
@@ -54,7 +52,6 @@ Como executar
 Na raiz do repositório:
 
 python3 task04/run_task04.py --in task04/inputs_vhdl --out task04 --run-yosys --gen-ast
-
 
 Resultados esperados:
 
