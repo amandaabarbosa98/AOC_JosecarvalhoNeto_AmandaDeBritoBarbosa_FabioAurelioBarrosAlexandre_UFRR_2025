@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>TASK 04 Dashboard</title>
+  <style>
+    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Arial,sans-serif;margin:20px}
+    h1{margin:0 0 8px 0}
+    .muted{color:#666;margin:0 0 16px 0}
+    .controls{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin:12px 0}
+    input{padding:8px 10px;font-size:14px;min-width:260px}
+    select{padding:8px 10px;font-size:14px}
+    table{border-collapse:collapse;width:100%;margin-top:10px}
+    th,td{border:1px solid #ddd;padding:8px;vertical-align:top;font-size:13px}
+    th{background:#f6f6f6;text-align:left}
+    .tag{display:inline-block;padding:2px 8px;border-radius:999px;font-size:12px}
+    .ok{background:#e7f7ed}
+    .fail{background:#fde8e8}
+    .skip{background:#eee}
+    .small{font-size:12px;color:#555}
+    a{color:#0b57d0;text-decoration:none}
+    a:hover{text-decoration:underline}
+  </style>
+</head>
+<body>
+  <h1>Dashboard — TASK 04</h1>
+  <p class="muted">Lê <code>task04/results/summary.json</code> e mostra o status por etapa (vhd2vl / yosys / sby / v2c / esbmc) + links para logs e Common AST.</p>
+
+  <div class="controls">
+    <input id="q" placeholder="Filtrar por nome do design (ex.: integer, clock)"/>
+    <select id="step">
+      <option value="">Etapa (todas)</option>
+      <option value="vhd2vl">vhd2vl</option>
+      <option value="yosys_prep">yosys_prep</option>
+      <option value="sby">sby</option>
+      <option value="v2c">v2c</option>
+      <option value="esbmc">esbmc</option>
+    </select>
+    <select id="status">
+      <option value="">Status (todos)</option>
+      <option value="OK">OK</option>
+      <option value="FAIL">FAIL</option>
+      <option value="SKIP">SKIP</option>
+    </select>
+    <button id="reload">Recarregar</button>
+  </div>
+
+  <div id="meta" class="small"></div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Design</th>
+        <th>VHDL</th>
+        <th>Spec</th>
+        <th>vhd2vl</th>
+        <th>yosys_prep</th>
+        <th>sby</th>
+        <th>v2c</th>
+        <th>esbmc</th>
+        <th>Common AST</th>
+        <th>Notas</th>
+      </tr>
+    </thead>
+    <tbody id="rows"></tbody>
+  </table>
+
+<script src="app.js"></script>
+</body>
+</html>

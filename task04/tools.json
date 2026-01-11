@@ -1,0 +1,7 @@
+{
+  "vhd2vl": "vhd2vl {in_vhdl} > {out_verilog}",
+  "yosys_prep": "yosys -p \"read_verilog {in_verilog}; prep -top {top}; write_verilog {out_verilog_prep}; write_json {out_yosys_json}\"",
+  "sby": "sby -f {sby_file}",
+  "v2c": "v2c {in_verilog} > {out_c}",
+  "esbmc": "esbmc {in_c} --unwind 20"
+}
