@@ -1,6 +1,6 @@
 # TASK 04 — Pipeline + Front-end (Dashboard) + Objective 5 (Common AST)
 
-Este diretório contém uma implementação reprodutível para a **TASK 04**:
+aqui tem o diretorio explicando como fazer o coisa da **TASK 04**:
 - automação de pipeline (detecção VHDL → specs → opcionalmente VHD2VL/Yosys/SymbiYosys/V2C/ESBMC)
 - geração de **arquivo auxiliar** (`specs/*.json`) com IO + propriedades (`@c2vhdl:ASSUME/@c2vhdl:ASSERT`)
 - **front-end** (dashboard) que lê `results/summary.json`
