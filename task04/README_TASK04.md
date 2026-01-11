@@ -49,4 +49,4 @@ python3 task04/serve_dashboard.py
 Abra: `http://localhost:8000/task04/dashboard/`
 
 ## 6) Configurar ferramentas
-Edite `task04/tools.json` com os comandos reais do seu ambiente (WSL2).
+ai agora vc edita `task04/tools.json` com os comandos reais do seu ambiente (WSL2).
