@@ -18,7 +18,6 @@ Este guia mostra como acessar o repositório no GitHub, clonar no Ubuntu, execut
 
 Abra o Terminal e rode:
 
-```bash
 cd ~
 git clone https://github.com/amandaabarbosa98/AOC_JosecarvalhoNeto_AmandaDeBritoBarbosa_FabioAurelioBarrosAlexandre_UFRR_2025.git
 cd AOC_JosecarvalhoNeto_AmandaDeBritoBarbosa_FabioAurelioBarrosAlexandre_UFRR_2025
@@ -37,6 +36,7 @@ yosys -V
 z3 --version
 
 ---
+##
 
 ## 4) Executar o pipeline da TASK 04 (gera specs, summary e AST comum)
 
