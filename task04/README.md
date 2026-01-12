@@ -1,10 +1,11 @@
-# TASK 04 — Pipeline + Front-end (Dashboard) + Objective 5 (Common AST)
+# TASK 04 — Pipeline + Front-end (Dashboard) + GHDL/AST
 
-aqui tem o diretorio explicando como fazer o coisa da **TASK 04**:
-- automação de pipeline (detecção VHDL → specs → opcionalmente VHD2VL/Yosys/SymbiYosys/V2C/ESBMC)
-- geração de **arquivo auxiliar** (`specs/*.json`) com IO + propriedades (`@c2vhdl:ASSUME/@c2vhdl:ASSERT`)
-- **front-end** (dashboard) que lê `results/summary.json`
-- **Objective 5**: *front-end unificador* que gera um **AST comum** (schema `aoc-task04-common-ast-v1`)
+Esse diretório detalha o funcionamento da etapa (04) de *pipeline* com a etapa (05) de GHDL + AST:
+
+- Automação de pipeline (detecção VHDL → specs → opcionalmente VHD2VL/Yosys/SymbiYosys/V2C/ESBMC)
+- Geração de **arquivo auxiliar** (`specs/*.json`) com IO + propriedades (`@c2vhdl:ASSUME/@c2vhdl:ASSERT`)
+- **Front-end** (dashboard) que lê `results/summary.json`
+- **Front-end unificador** que gera um **AST comum** (schema `aoc-task04-common-ast-v1`)
 
 ## 1) Executar o pipeline (mínimo)
 ```bash
@@ -51,32 +52,18 @@ Abra: `http://localhost:8000/task04/dashboard/`
 ## 6) Configurar ferramentas
 ai agora vc edita `task04/tools.json` com os comandos reais do seu ambiente (WSL2).
 
+---
 
-## referencias
+## Referências
 
-Como instalar o WSL 2 (Ubuntu) no Windows 11/10 | 2025
-https://www.youtube.com/watch?v=O8KmK3vXl28
-
-Formal Verification of Verilog HDL with Yosys-SMTBMC (33c3)
-https://www.youtube.com/watch?v=VJsMLPGg4U4
-
-Getting Started with VHDL on Linux (GHDL & GTKWave)
-https://www.youtube.com/watch?v=dvLeDNbXfFw
-
-Como compilar VHDL utilizando GHDL - Tutorial (ambiente de código aberto)
-https://www.youtube.com/watch?v=SihNA2rcS_0
-
-
-Simulating VDHL code with GHDL
-https://www.youtube.com/watch?v=j9hya97kRJA
-
-VHDL Tutorial
-https://www.youtube.com/playlist?list=PLEdaowO6UzNENeQ2WHyGC6mlmggnnhMD6
-
-Very Basic Introduction to Formal Verification
-https://www.youtube.com/watch?v=9e7F1XhjhKw
-
-yosyHQ ( documentos encontrados e traduzidos com a ajuda do chatgpt )
+[Como instalar o WSL 2 (Ubuntu) no Windows 11/10 | 2025](https://www.youtube.com/watch?v=O8KmK3vXl28)
+[Formal Verification of Verilog HDL with Yosys-SMTBMC (33c3)](https://www.youtube.com/watch?v=VJsMLPGg4U4)
+[Getting Started with VHDL on Linux (GHDL & GTKWave)](https://www.youtube.com/watch?v=dvLeDNbXfFw)
+[Como compilar VHDL utilizando GHDL - Tutorial (ambiente de código aberto)](https://www.youtube.com/watch?v=SihNA2rcS_0)
+[Simulating VDHL code with GHDL](https://www.youtube.com/watch?v=j9hya97kRJA)
+[VHDL Tutorial](https://www.youtube.com/playlist?list=PLEdaowO6UzNENeQ2WHyGC6mlmggnnhMD6)
+[Very Basic Introduction to Formal Verification](https://www.youtube.com/watch?v=9e7F1XhjhKw)
+YosysHQ  
 https://symbiyosys.readthedocs.io/en/latest/quickstart.html?utm_source=chatgpt.com
 https://yosyshq.readthedocs.io/projects/yosys/en/0.45/appendix/auxprogs.html?utm_source=chatgpt.com
 https://gritbub-ghdl.readthedocs.io/en/latest/using/Simulation.html?utm_source=chatgpt.com
