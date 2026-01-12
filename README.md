@@ -1,78 +1,104 @@
-# AOC_JosecarvalhoNeto_AmandaDeBritoBarbosa_FabioAurelioBarrosAlexandre_UFRR_2025
-# Tutorial —  (GitHub → Ubuntu → Execução → Dashboard)
+# Projeto – Automação de Pipeline para Verificação Formal de Circuitos em VHDL
+
+Este repositório contém os artefatos, códigos e resultados do Projeto Final de Arquitetura e Organização de Computadores. O projeto investiga, implementa e automatiza um fluxo de **Verificação Formal de Hardware** utilizando ferramentas *Open Source*.
+
+O projeto foi realizado pelos alunos **Amanda de Brito**, **Fábio Aurélio** e **José Carvalho**, com auxílio do **Prof. Dr. Herbert Rocha** pelo Departamento de Ciência da Computação na Universidade Federal de Roraima, em 2025.
+
+## Motivação
+
+A verificação de circuitos digitais complexos apenas via simulação (testbench) é insuficiente para garantir a ausência de erros críticos. A Verificação Formal oferece uma prova matemática de correção, mas as ferramentas comerciais são caras e inacessíveis.
+
+A literatura propõe fluxos que traduzem Hardware (VHDL) para Software (C) para aproveitar verificadores poderosos como o **ESBMC**. No entanto, esses fluxos frequentemente dependem de ferramentas legadas ou configurações manuais propensas a erros.
+
+##  Objetivos
+
+1.  **Automatizar o Pipeline:** Desenvolver um script capaz de ler código VHDL, extrair regras de negócio (`assertions`) e orquestrar as ferramentas de verificação sem intervenção humana.
+2.  **Validar o Fluxo de Hardware:** Integrar **Yosys + SymbiYosys** para realizar a síntese e verificação formal de propriedades em nível de RTL.
+3.  **Analisar o Fluxo de Software:** Testar a viabilidade da tradução VHDL $\to$ C para uso com o **ESBMC**.
+4.  **Propor Nova Arquitetura:** Demonstrar as limitações da tradução baseada em arquivos e propor um fluxo unificado via *Frontend* GHDL.
+
+## Tecnologias e Ferramentas
+
+O pipeline foi construido sobre o ecossistema Linux (WSL2/Ubuntu) utilizando:
+- Linguagem de Script: Python 3 (com Regex para extração de metadados).
+- Síntese e Otimização: Yosys.
+- Verificação de Hardware: SymbiYosys (SBY) com solver Z3.
+- Verificação de Software: ESBMC.
+- Frontend VHDL: GHDL
+   
+---
+
+# Tutorial — (GitHub → Ubuntu → Execução → Dashboard)
 
 Este guia mostra como acessar o repositório no GitHub, clonar no Ubuntu, executar o pipeline da TASK 04 e abrir o dashboard localmente.
 
----
-
-## 1) Acessar o GitHub e conferir o repositório
-
-1. Acesse **github.com** e faça login.
-2. Entre no repositório:
-   - `amandaabarbosa98/AOC_JosecarvalhoNeto_AmandaDeBritoBarbosa_FabioAurelioBarrosAlexandre_UFRR_2025`
-3. Confirme se a pasta `task04/` existe no repositório.
-
----
-
-## 2) Clonar o repositório no Ubuntu
+## 1) Clonar o repositório no Ubuntu
 
 Abra o Terminal e rode:
 
-cd ~
-git clone https://github.com/amandaabarbosa98/AOC_JosecarvalhoNeto_AmandaDeBritoBarbosa_FabioAurelioBarrosAlexandre_UFRR_2025.git
-cd AOC_JosecarvalhoNeto_AmandaDeBritoBarbosa_FabioAurelioBarrosAlexandre_UFRR_2025
-ls
+```
+> cd ~
+> git clone https://github.com/amandaabarbosa98/AOC_JosecarvalhoNeto_AmandaDeBritoBarbosa_FabioAurelioBarrosAlexandre_UFRR_2025.git
+> cd AOC_JosecarvalhoNeto_AmandaDeBritoBarbosa_FabioAurelioBarrosAlexandre_UFRR_2025
+> ls
+```
 Você deve ver a pasta task04/.
 
 ---
 
-## 3) Verificar dependências do ambiente
+## 2) Verificar dependências do ambiente
 No terminal, verifique:
 
 bash
-Copiar código
-python3 --version
-yosys -V
-z3 --version
+```
+> python3 --version
+> yosys -V
+> z3 --version
+```
 
 ---
-##
 
-## 4) Executar o pipeline da TASK 04 (gera specs, summary e AST comum)
+## 3) Executar o pipeline da TASK 04 (gera specs, summary e AST comum)
 
 Na raiz do repositório, execute:
 
 bash
-Copiar código
-python3 task04/run_task04.py --in task04/inputs_vhdl --out task04 --run-yosys --gen-ast
+```
+> python3 task04/run_task04.py --in task04/inputs_vhdl --out task04 --run-yosys --gen-ast
+```
+
 Saída esperada:
 
-Wrote: task04/results/summary.json
-
-Wrote: task04/results/summary.csv
+```
+> Wrote: task04/results/summary.json
+> Wrote: task04/results/summary.csv
+```
 
 Confirme os arquivos gerados:
 
 bash
-Copiar código
-ls task04/specs
-ls task04/results
-ls task04/results/ast
+```
+> ls task04/specs
+> ls task04/results
+> ls task04/results/ast
+```
 
 ---
 
-## 5) Abrir o Dashboard (frontend)
+## 4) Abrir o Dashboard (frontend)
 Inicie o servidor:
 
 bash
-Copiar código
+```
 python3 task04/serve_dashboard.py
-Abra no navegador:
+```
 
+Abra no navegador:
+```
 http://localhost:8000/task04/dashboard/
+```
 
 Para encerrar o servidor: Ctrl + C no terminal.
-
 Obs.: Se aparecer 404 para favicon.ico, isso não afeta o funcionamento.
 
 makefile
