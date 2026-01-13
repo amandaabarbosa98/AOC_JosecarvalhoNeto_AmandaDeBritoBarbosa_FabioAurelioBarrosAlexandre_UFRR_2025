@@ -28,7 +28,7 @@ O pipeline foi construido sobre o ecossistema Linux (WSL2/Ubuntu) utilizando:
 - Verificação de Software: ESBMC.
 - Frontend VHDL: GHDL
 
-## 📂 Estrutura do Respositório
+## 📁 Estrutura do Respositório
 
 ```text
 ├── task04                              # Etapa de aplicação do GHDL/AST
@@ -48,6 +48,22 @@ O pipeline foi construido sobre o ecossistema Linux (WSL2/Ubuntu) utilizando:
 ├── automacao_inicial.py                # Script de automação inicial
 └── README.md                           # Este arquivo
 ```
+
+## 📂 Estrutura dos Diretórios
+
+## Teste 1
+Nesse primeiro teste, elaboramos circuitos em VHDL simples que não possuiam regras e tags. Inicialmente, os circuitos passaram pela tradução de VHDL para Verilog (gerando o arquivo com extensão .v) com a
+ferramenta *VHD2VL* e em seguida, a síntese/limpeza pela ferramenta *Yosys* (gerando o arquivo elaborado_{circuito}.v), para posteriormente passar pela ferramenta de validação matemática *SymbiYosys*.
+
+## Teste 2
+Nesse segundo teste, adicionamos as tags nos mesmos circuitos para verificar a diferença que ocorreria na existência e
+ausência delas. Assim como no primeiro teste, o código em VHDL foi traduzido para Verilog, porém a tradução ocorreu internamente na ferramenta *SymbiYosys*.  
+
+O circuito também passou por validação matemática com o *SymbiYosys*, testado pelo solver *Z3* contido no programa.
+Foi feito um teste de falha proposital, com a expectativa que a ferramenta usada para validação
+pudesse acusar erro/divergência entre as regras/tags e o circuito proposto.
+
+---
 
 # Tutorial — (GitHub → Ubuntu → Execução → Dashboard)
 
