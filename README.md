@@ -27,8 +27,27 @@ O pipeline foi construido sobre o ecossistema Linux (WSL2/Ubuntu) utilizando:
 - Verificação de Hardware: SymbiYosys (SBY) com solver Z3.
 - Verificação de Software: ESBMC.
 - Frontend VHDL: GHDL
-   
----
+
+## 📂 Estrutura do Respositório
+
+```text
+├── task04                              # Etapa de aplicação do GHDL/AST
+├── teste_integer/                      # Teste de restrição de inteiros
+|   ├── Teste 1
+|   └── Teste 2                    
+├── teste_clock/                        # Teste de lógica sequencial/temporal
+|   ├── Teste 1
+|   └── Teste 2                         
+├── teste_downto/                       # Teste de vetores e direção de bits
+|   ├── Teste 1
+|   └── Teste 2                        
+├── teste_array/                        # Teste de complexidade
+|   ├── Teste 1
+|   └── Teste 2                         
+├── relatorio_aoc_projeto-final.pdf     # Documentação e Relatório
+├── automacao_inicial.py                # Script de automação inicial
+└── README.md                           # Este arquivo
+```
 
 # Tutorial — (GitHub → Ubuntu → Execução → Dashboard)
 
